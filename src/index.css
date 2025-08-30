@@ -8,57 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Material Design inspired color palette */
-    --background: 248 250 252;
-    --foreground: 213 20% 15%;
+    /* Modern Light Theme - Clean & Elegant */
+    --background: 255 255 255;
+    --foreground: 15 23% 15%;
 
     --card: 255 255 255;
-    --card-foreground: 213 20% 15%;
-    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --card-foreground: 15 23% 15%;
+    --card-shadow: 0 8px 25px -5px hsl(0 0% 0% / 0.1), 0 4px 10px -3px hsl(0 0% 0% / 0.05);
 
     --popover: 255 255 255;
-    --popover-foreground: 213 20% 15%;
+    --popover-foreground: 15 23% 15%;
 
-    /* Primary: Modern teal/blue */
-    --primary: 199 89% 48%;
+    /* Primary: Vibrant Blue (#2196F3) */
+    --primary: 207 90% 54%;
     --primary-foreground: 255 255 255;
-    --primary-hover: 199 89% 38%;
+    --primary-hover: 207 90% 44%;
+    --primary-glow: 207 90% 64%;
 
-    /* Secondary: Light blue-gray */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 213 20% 15%;
+    /* Secondary: Clean Light Gray */
+    --secondary: 210 20% 97%;
+    --secondary-foreground: 15 23% 15%;
 
-    /* Muted: Subtle gray */
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 25% 47%;
+    /* Muted: Subtle Light Gray */
+    --muted: 210 14% 97%;
+    --muted-foreground: 210 25% 50%;
 
-    /* Accent: Vibrant purple */
-    --accent: 262 52% 57%;
+    /* Accent: Teal (#00BCD4) */
+    --accent: 187 100% 42%;
     --accent-foreground: 255 255 255;
+    --accent-glow: 187 100% 52%;
 
-    /* Success: Modern green */
+    /* Status Colors */
     --success: 142 76% 36%;
     --success-foreground: 255 255 255;
-
-    /* Warning: Amber */
     --warning: 38 92% 50%;
     --warning-foreground: 23 20% 15%;
-
     --destructive: 0 84% 60%;
     --destructive-foreground: 255 255 255;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 199 89% 48%;
+    --border: 210 14% 89%;
+    --input: 210 14% 97%;
+    --ring: 207 90% 54%;
 
-    --radius: 8px;
+    --radius: 16px;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(262 52% 57%));
-    --gradient-card: linear-gradient(135deg, hsl(255 255 255), hsl(248 250 252));
-    --shadow-soft: 0 2px 10px -3px rgb(199 89% 48% / 0.1);
-    --shadow-elevated: 0 8px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Modern Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(207 90% 54%), hsl(262 83% 58%));
+    --gradient-accent: linear-gradient(135deg, hsl(187 100% 42%), hsl(142 76% 36%));
+    --gradient-card: linear-gradient(135deg, hsl(255 255 255), hsl(210 20% 98%));
+    --gradient-glass: linear-gradient(135deg, hsl(255 255 255 / 0.7), hsl(255 255 255 / 0.3));
+    --shadow-soft: 0 4px 15px -3px hsl(207 90% 54% / 0.2);
+    --shadow-elevated: 0 20px 40px -15px hsl(0 0% 0% / 0.15);
+    --shadow-glow: 0 0 30px hsl(207 90% 54% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -83,14 +86,15 @@ All colors MUST be HSL.
 
     --card: 20 14% 11%;
     --card-foreground: 210 40% 98%;
-    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --card-shadow: 0 8px 25px -5px hsl(0 0% 0% / 0.3), 0 4px 10px -3px hsl(0 0% 0% / 0.2);
 
     --popover: 20 14% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 199 89% 48%;
+    --primary: 207 90% 54%;
     --primary-foreground: 255 255 255;
-    --primary-hover: 199 89% 38%;
+    --primary-hover: 207 90% 44%;
+    --primary-glow: 207 90% 64%;
 
     --secondary: 217 32% 18%;
     --secondary-foreground: 210 40% 98%;
@@ -98,26 +102,28 @@ All colors MUST be HSL.
     --muted: 217 32% 18%;
     --muted-foreground: 215 25% 65%;
 
-    --accent: 262 52% 57%;
+    --accent: 187 100% 42%;
     --accent-foreground: 255 255 255;
+    --accent-glow: 187 100% 52%;
 
     --success: 142 76% 36%;
     --success-foreground: 255 255 255;
-
     --warning: 38 92% 50%;
     --warning-foreground: 23 20% 15%;
-
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 32% 18%;
     --input: 217 32% 18%;
-    --ring: 199 89% 48%;
+    --ring: 207 90% 54%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(262 52% 57%));
+    --gradient-primary: linear-gradient(135deg, hsl(207 90% 54%), hsl(262 83% 58%));
+    --gradient-accent: linear-gradient(135deg, hsl(187 100% 42%), hsl(142 76% 36%));
     --gradient-card: linear-gradient(135deg, hsl(20 14% 11%), hsl(15 23% 8%));
-    --shadow-soft: 0 2px 10px -3px rgb(199 89% 48% / 0.2);
-    --shadow-elevated: 0 8px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    --gradient-glass: linear-gradient(135deg, hsl(20 14% 11% / 0.7), hsl(20 14% 11% / 0.3));
+    --shadow-soft: 0 4px 15px -3px hsl(207 90% 54% / 0.3);
+    --shadow-elevated: 0 20px 40px -15px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(207 90% 54% / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

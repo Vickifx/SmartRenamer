@@ -68,15 +68,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b">
+      <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-md border-b border-border/20 shadow-soft">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                File Refactor Wizard
+              <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                SmartRenamer
               </h1>
-              <p className="text-sm text-muted-foreground">
-                Batch rename files with ease
+              <p className="text-sm text-muted-foreground font-medium">
+                Intelligent batch file renaming
               </p>
             </div>
             

@@ -93,41 +93,41 @@ export const FileListItem: React.FC<FileListItemProps> = ({
       ref={setNodeRef}
       style={style}
       className={`
-        group flex items-center gap-4 p-4 bg-card rounded-lg shadow-card border transition-all duration-200
-        ${isDragging ? 'opacity-50 shadow-elevated z-50' : ''}
-        ${isModified && !isFocused ? 'border-l-4 border-l-primary' : ''}
+        group flex items-center gap-6 p-6 bg-gradient-card backdrop-blur-sm rounded-2xl shadow-elevated border border-border/20 transition-all duration-300
+        ${isDragging ? 'opacity-50 shadow-glow z-50 scale-105' : ''}
+        ${isModified && !isFocused ? 'border-l-4 border-l-primary shadow-glow' : ''}
         ${!isValid && !isFocused ? 'border-l-4 border-l-destructive' : ''}
-        hover:shadow-elevated
+        hover:shadow-glow hover:scale-[1.02] hover:border-primary/30
       `}
     >
       {/* Drag Handle */}
       <Button
         variant="ghost"
         size="icon"
-        className="cursor-grab active:cursor-grabbing opacity-40 group-hover:opacity-100 transition-opacity"
+        className="cursor-grab active:cursor-grabbing opacity-40 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
         {...attributes}
         {...listeners}
       >
-        <GripVertical className="w-4 h-4" />
+        <GripVertical className="w-5 h-5" />
       </Button>
 
       {/* File Icon */}
-      <div className="flex-shrink-0">
-        <FileIcon className="w-5 h-5 text-muted-foreground" />
+      <div className="flex-shrink-0 p-2 bg-gradient-primary rounded-lg shadow-soft">
+        <FileIcon className="w-6 h-6 text-white" />
       </div>
 
       {/* Original Name */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm text-muted-foreground truncate">
+        <p className="text-base font-medium text-foreground truncate">
           {file.name}
         </p>
-        <p className="text-xs text-muted-foreground/70">
+        <p className="text-sm text-muted-foreground font-medium">
           {(file.size / 1024).toFixed(1)} KB
         </p>
       </div>
 
       {/* Arrow */}
-      <div className="flex-shrink-0 text-muted-foreground">
+      <div className="flex-shrink-0 text-primary font-bold text-lg">
         →
       </div>
 
@@ -141,22 +141,26 @@ export const FileListItem: React.FC<FileListItemProps> = ({
           onFocus={() => setIsFocused(true)}
           onKeyPress={handleKeyPress}
           className={`
-            w-full px-3 py-2 text-sm bg-background border rounded-md transition-all duration-200
-            focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary
-            ${!isValid && !isFocused ? 'border-destructive bg-destructive/5' : 'border-input'}
+            w-full px-4 py-3 text-base font-medium bg-background border-2 rounded-xl transition-all duration-300
+            focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-primary focus:shadow-glow
+            ${!isValid && !isFocused ? 'border-destructive bg-destructive/5' : 'border-input hover:border-primary/40'}
           `}
           placeholder="Enter new name..."
         />
         
         {/* Validation Indicator */}
-        <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
           {!isFocused && (
             <>
               {isValid && isModified && (
-                <Check className="w-4 h-4 text-success" />
+                <div className="w-6 h-6 bg-success rounded-full flex items-center justify-center animate-scale-bounce">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
               )}
               {!isValid && (
-                <AlertTriangle className="w-4 h-4 text-destructive" />
+                <div className="w-6 h-6 bg-destructive rounded-full flex items-center justify-center animate-scale-bounce">
+                  <AlertTriangle className="w-4 h-4 text-white" />
+                </div>
               )}
             </>
           )}
@@ -165,7 +169,7 @@ export const FileListItem: React.FC<FileListItemProps> = ({
 
       {/* Error Message */}
       {error && !isFocused && (
-        <div className="absolute top-full left-4 right-4 mt-1 p-2 bg-destructive/10 border border-destructive/20 rounded text-xs text-destructive animate-fade-in">
+        <div className="absolute top-full left-6 right-6 mt-2 p-3 bg-destructive/10 border border-destructive/20 rounded-xl text-sm text-destructive animate-fade-in font-medium">
           {error}
         </div>
       )}

@@ -121,17 +121,17 @@ export const FileRenameList: React.FC<FileRenameListProps> = ({
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Stats Header */}
-      <div className="flex items-center justify-between p-4 bg-muted/30 rounded-lg">
-        <div className="space-y-1">
-          <h2 className="text-lg font-semibold text-foreground">
+      <div className="flex items-center justify-between p-6 bg-gradient-glass backdrop-blur-sm rounded-2xl border border-border/20 shadow-elevated">
+        <div className="space-y-2">
+          <h2 className="text-xl font-bold text-foreground">
             File Rename List
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground font-medium">
             {fileItems.length} files • {getModifiedCount()} modified • {getValidCount()} valid
           </p>
         </div>
         
-        <div className="text-right text-xs text-muted-foreground">
+        <div className="text-right text-xs text-muted-foreground space-y-1 font-medium">
           <p>Drag to reorder</p>
           <p>Click names to edit</p>
         </div>
@@ -170,9 +170,9 @@ export const FileRenameList: React.FC<FileRenameListProps> = ({
       </DndContext>
 
       {/* Helper Text */}
-      <div className="p-4 bg-accent/10 rounded-lg border border-accent/20">
-        <p className="text-xs text-muted-foreground">
-          <strong>Tips:</strong> File extensions are automatically preserved. 
+      <div className="p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl border border-primary/20 shadow-soft">
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          <strong className="text-foreground">Tips:</strong> File extensions are automatically preserved. 
           Avoid special characters like {`< > : " / \\ | ? *`}. 
           Maximum filename length is 255 characters.
         </p>

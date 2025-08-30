@@ -65,34 +65,35 @@ export const FileUploadZone: React.FC<FileUploadZoneProps> = ({ onFilesSelected,
   return (
     <div
       className={`
-        border-2 border-dashed rounded-lg p-12 text-center transition-all duration-300
+        border-2 border-dashed rounded-2xl p-16 text-center transition-all duration-500
         ${isDragOver 
-          ? 'border-primary bg-primary/5 shadow-soft' 
-          : 'border-muted-foreground/25 hover:border-primary/50'
+          ? 'border-primary bg-gradient-to-br from-primary/10 to-accent/5 shadow-glow transform scale-[1.02]' 
+          : 'border-border hover:border-primary/60 hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5 hover:shadow-soft'
         }
       `}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <div className="space-y-4">
-        <div className="w-16 h-16 mx-auto bg-gradient-primary rounded-full flex items-center justify-center shadow-soft">
-          <Upload className="w-8 h-8 text-white" />
+      <div className="space-y-6">
+        <div className="w-20 h-20 mx-auto bg-gradient-primary rounded-full flex items-center justify-center shadow-glow animate-bounce-in">
+          <Upload className="w-9 h-9 text-white" />
         </div>
         
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-foreground">
+        <div className="space-y-3">
+          <h3 className="text-2xl font-bold text-foreground">
             Select Files to Rename
           </h3>
-          <p className="text-muted-foreground">
-            Drag and drop files here, or click to browse
+          <p className="text-muted-foreground leading-relaxed">
+            Drag and drop files here, or click to browse your device
           </p>
         </div>
         
         <Button 
           variant="default" 
           onClick={openFileDialog}
-          className="mt-6"
+          className="mt-8 text-base"
+          size="lg"
         >
           Choose Files
         </Button>
